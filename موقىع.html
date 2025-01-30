@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واجهة الموقع</title>
+    <style>
+        body {
+            margin: 0;
+            height: 90vh;
+            background-image: url('https://k.top4top.io/p_3316wz3wo1.jpg');
+            background-size: contain; /* لتغطية الشاشة بالكامل */
+            background-position: center; /* لضبط الصورة في المنتصف */
+            display: flex;
+            flex-direction: column; /* ترتيب العناصر عمودياً */
+            justify-content: center; /* محاذاة العناصر إلى الوسط */
+            align-items: center;
+            text-align: center; /* محاذاة النص إلى الوسط */
+            padding-bottom: 50px; /* إضافة مسافة إضافية من الأسفل */
+            position: relative; /* لتسهيل محاذاة العناصر */
+        }
+        .content {
+            color: white; /* لون النص */
+            padding: 20px;
+            margin-bottom: 20px; /* مسافة تحت النص */
+        }
+        .icon {
+            width: 60px; /* حجم الأيقونة */
+            height: 60px; /* حجم الأيقونة */
+            margin: 10px; /* مسافة بين الأيقونات */
+            transition: transform 0.3s, box-shadow 0.3s; /* تأثيرات التحول */
+        }
+        .icon:hover {
+            transform: scale(1.1); /* تكبير الأيقونة عند اللمس */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* تأثير الظل */
+        }
+        .icon:active {
+            transform: translateY(4px) scale(0.95) rotateX(10deg) rotateY(10deg); /* تأثير 3D عند الضغط */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* تأثير ظل عند الضغط */
+        }
+        .sidebar {
+            margin-top: 20px; /* إضافة مسافة فوق الأزرار */
+        }
+        .button {
+            background-color: #007BFF; /* لون الزر */
+            color: white; /* لون النص */
+            border: none; /* بدون حدود */
+            padding: 10px 15px; /* مسافة داخل الزر */
+            margin: 5px 0; /* مسافة بين الأزرار */
+            cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+            transition: background-color 0.3s; /* تأثير تغيير اللون */
+        }
+        .button:hover {
+            background-color: #0056b3; /* لون الزر عند المرور */
+        }
+        .info {
+            display: none; /* إخفاء المعلومات في البداية */
+            background-color: rgba(255, 255, 255, 0.8); /* لون خلفية المعلومات */
+            color: black; /* لون النص */
+            padding: 20px; /* مسافة داخل المعلومات */
+            border-radius: 5px; /* زوايا مدورة */
+            position: absolute; /* موضع المعلومات */
+            left: 50%; /* محاذاة أفقية */
+            transform: translate(-50%, 0); /* مركز أفقي */
+            width: 200px; /* عرض المعلومات */
+            top: 100px; /* موضع المعلومات */
+        }
+        .description {
+            color: white; /* لون النص */
+            margin-bottom: 10px; /* مسافة تحت النص */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>مرحبا بكم في موقعي!</h1>
+    </div>
+    <div>
+        <a href="https://www.facebook.com/اسم_حسابك" target="_blank">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="فيسبوك">
+        </a>
+        <a href="https://www.instagram.com/e3.8o?igsh=MXNvMnJhczg4dngwZg==" target="_blank">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="إنستغرام">
+        </a>
+    </div>
+
+    <div class="description">
+        <p>نحن هنا لنقدم لك أفضل الخدمات والمعلومات التي تحتاجها. اكتشف المزيد من خلال الأزرار أدناه!</p>
+    </div>
+
+    <div class="sidebar">
+        <button class="button" onclick="toggleInfo('info1')">أولاً</button>
+        <button class="button" onclick="toggleInfo('info2')">ثانياً</button>
+        <button class="button" onclick="toggleInfo('info3')">ثالثاً</button>
+    </div>
+
+    <div id="info1" class="info">
+        <h3>ماذا نقدم؟</h3>
+        <p>نحن نقدم خدمات متنوعة تلبي احتياجاتكم.</p>
+    </div>
+    <div id="info2" class="info">
+        <h3>ماذا نقدم؟</h3>
+        <p>نحن نقدم استشارات في مجالات متعددة.</p>
+    </div>
+    <div id="info3" class="info">
+        <h3>ماذا نقدم؟</h3>
+        <p>نحن نقدم دعم فني على مدار الساعة.</p>
+    </div>
+
+    <script>
+        function toggleInfo(infoId) {
+            const infoElements = document.querySelectorAll('.info');
+            infoElements.forEach(info => {
+                if (info.id === infoId) {
+                    info.style.display = info.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    info.style.display = 'none'; // إخفاء باقي المعلومات
+                }
+            });
+        }
+    </script>
+</body>
+</html>
